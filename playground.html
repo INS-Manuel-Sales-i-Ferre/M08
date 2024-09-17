@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Editor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="playground.css" />
+
+    <!-- MONACO CSS -->
+    <link rel="stylesheet" href="monaco-editor/min/vs/editor/editor.main.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="index.html">Aplicacions web</a></h1>
+        <h2>Editor</h2>
+        <p>
+          Aquí podeu fer totes les proves que vulgueu utilitzant els llenguatges
+          HTML, CSS i Javascript. El contingut de cadascuna de les pestanyes
+          s'aplicarà de forma automàtica al visor de la dreta
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="editor">
+        <div class="selector">
+          <label for="html-tab">HTML</label>
+          <input type="radio" id="html-tab" name="tab" checked />
+          <label for="css-tab">CSS</label>
+          <input type="radio" id="css-tab" name="tab" />
+          <!-- <label for="js-tab">JavaScript</label>
+          <input type="radio" id="js-tab" name="tab" /> -->
+        </div>
+
+        <div class="tab">
+          <div id="code"></div>
+        </div>
+      </div>
+      <div class="preview">
+        <iframe id="result"></iframe>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Portal de M08 - Aplicacions web</p>
+    </footer>
+
+    <!-- MONACO JS -->
+    <script src="monaco-editor/min/vs/loader.js"></script>
+    <script src="playground.js"></script>
+  </body>
+</html>

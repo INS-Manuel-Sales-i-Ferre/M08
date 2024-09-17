@@ -1,0 +1,39 @@
+main {
+    margin: 0;
+}
+main.container {
+    display: flex;
+    width: 100%;
+    max-width: unset;
+    gap: 10px;
+}
+
+.editor {
+    width: 50%;
+    margin-top: -25px;
+}
+
+#code {
+    width: 100%; 
+    height: calc(100% - 25px); 
+    border: 1px solid black
+}
+
+.tab {
+    display: initial;
+    width: 100%;
+}
+
+input[type="radio"]:checked + label + textarea {
+    display: block;
+}
+
+.preview {
+    width: 50%;
+}
+
+.preview iframe {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
