@@ -30,9 +30,9 @@ header {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
-  /* font-size: 2rem; */
-  /* margin-bottom: 10px; */
+header a {
+  text-decoration: none;
+  color: white;
 }
 
 header p {
@@ -43,6 +43,7 @@ header p {
 /* Cos principal */
 main {
   padding: 40px 30px;
+  min-height: 62.4vh;
 }
 
 main h2 {
@@ -58,8 +59,8 @@ main p {
 }
 
 h2 a {
-    text-decoration: none;
-    color: #4a90e2;
+  text-decoration: none;
+  color: #4a90e2;
 }
 
 ul {
@@ -91,12 +92,23 @@ ul li a:hover {
   color: white;
 }
 
+body::after {
+  content: "";
+  display: block;
+  height: 0px;
+  /* Set same as footer's height */
+}
+
 /* Peu de pàgina */
 footer {
-  background-color: #333;
+  background-color: #4a90e2;
   color: white;
   text-align: center;
   padding: 20px 0;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+  height: 70px;
 }
 
 footer p {
@@ -109,5 +121,5 @@ a {
 }
 
 h4 {
-    font-size: 1em;
+  font-size: 1em;
 }
