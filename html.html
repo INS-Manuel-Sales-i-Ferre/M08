@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Introducció a l'HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>Introducció a l'HTML</h1>
+        <p>
+          Explorarem les bases de l'HTML, les etiquetes principals, les
+          etiquetes obsoletes i molt més.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Taula de Continguts -->
+      <nav>
+        <h2><a href="">Índex</a></h2>
+        <ul>
+          <li><a href="#que-es-html">Què és l'HTML?</a></li>
+          <li>
+            <a href="#estructura-basica"
+              >Estructura bàsica d'un document HTML</a
+            >
+          </li>
+          <li><a href="#semantica">Semàntica dels documents HTML</a></li>
+          <li><a href="#estructura-etiqueta">Estructura d'una etiqueta</a></li>
+          <li>
+            <a href="#etiquetes-principals">Etiquetes principals i el seu ús</a>
+            <ul>
+              <li><a href="#etiquetes-text">Etiquetes de text</a></li>
+              <li><a href="#enllaços-imatges">Enllaços i imatges</a></li>
+              <li><a href="#formularis">Formularis</a></li>
+              <li><a href="#multimedia">Contingut multimèdia</a></li>
+            </ul>
+          </li>
+          <li><a href="#etiquetes-obsoletes">Etiquetes i propietats HTML obsoletes</a></li>
+          <li><a href="#llistes">Llistes</a></li>
+          <li><a href="#taules">Taules</a></li>
+          <li>
+            <a href="#divs">Els <code>&lt;div&gt;</code> i la seva utilitat</a>
+          </li>
+          <li><a href="#comentaris">Comentaris en HTML</a></li>
+        </ul>
+      </nav>
+
+      <!-- Seccions del contingut -->
+      <section id="que-es-html">
+        <h2>Què és l'HTML?</h2>
+        <p>
+          L'HTML (HyperText Markup Language) és el llenguatge estàndard per
+          crear pàgines web. Utilitza etiquetes per definir i organitzar
+          contingut que es mostrarà en un navegador web.
+        </p>
+      </section>
+
+      <section id="estructura-basica">
+        <h2>Estructura bàsica d'un document HTML</h2>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Títol de la pàgina&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Benvingut a l'HTML!&lt;/h1&gt;
+    &lt;p&gt;Aquest és un exemple senzill.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p>
+          Aquesta és l'estructura bàsica d'un document HTML. Les etiquetes
+          &lt;html&gt;, &lt;head&gt;, i &lt;body&gt; són essencials per a la
+          creació de qualsevol pàgina web.
+        </p>
+      </section>
+
+      <section id="semantica">
+        <h2>Semàntica dels documents HTML</h2>
+        <p>
+          La semàntica en HTML es refereix a l'ús d'etiquetes que descriuen el
+          contingut d'una pàgina web d'una manera que és significativa per a
+          humans i màquines. Les etiquetes semàntiques ajuden a estructurar el
+          document de manera clara, millorant l'accessibilitat i el SEO.
+        </p>
+
+        <h3>Etiquetes semàntiques principals</h3>
+
+        <h4>&lt;header&gt;</h4>
+        <p>
+          L'etiqueta &lt;header&gt; s'utilitza per definir una secció
+          d'encapçalament per a un document o una secció específica.
+          Generalment, conté el logotip, el títol i la barra de navegació.
+        </p>
+        <pre><code>&lt;header&gt;
+          &lt;h1&gt;Títol del Document&lt;/h1&gt;
+          &lt;nav&gt;
+            &lt;ul&gt;
+              &lt;li&gt;&lt;a href="#home"&gt;Inici&lt;/a&gt;&lt;/li&gt;
+              &lt;li&gt;&lt;a href="#about"&gt;Sobre nosaltres&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+          &lt;/nav&gt;
+        &lt;/header&gt;</code></pre>
+
+        <h4>&lt;main&gt;</h4>
+        <p>
+          L'etiqueta &lt;main&gt; s'utilitza per encapsular el contingut
+          principal del document. Ha de contenir informació que sigui exclusiva
+          per a la pàgina o secció actual, excloent el contingut repetitiu com
+          el menú de navegació o el peu de pàgina.
+        </p>
+        <pre><code>&lt;main&gt;
+          &lt;section&gt;
+            &lt;h2&gt;Títol de la Secció&lt;/h2&gt;
+            &lt;p&gt;Contingut principal de la pàgina.&lt;/p&gt;
+          &lt;/section&gt;
+        &lt;/main&gt;</code></pre>
+
+        <h4>&lt;footer&gt;</h4>
+        <p>
+          L'etiqueta &lt;footer&gt; s'utilitza per definir el peu de pàgina d'un
+          document o secció. Normalment, inclou informació com els drets
+          d'autor, enllaços a la política de privadesa, o dades de contacte.
+        </p>
+        <pre><code>&lt;footer&gt;
+          &lt;p&gt;&copy; 2024 Nom de l'Empresa. Tots els drets reservats.&lt;/p&gt;
+          &lt;p&gt;&lt;a href="#contact"&gt;Contacta amb nosaltres&lt;/a&gt;&lt;/p&gt;
+        &lt;/footer&gt;</code></pre>
+
+        <h3>Avantatges de les etiquetes semàntiques</h3>
+        <ul>
+          <li>
+            <strong>Millora l'accessibilitat:</strong> Les etiquetes semàntiques
+            ajuden als lectors de pantalla a entendre millor l'estructura i el
+            contingut de la pàgina, millorant l'experiència dels usuaris amb
+            discapacitat.
+          </li>
+          <li>
+            <strong>Millora el SEO:</strong> Els motors de cerca poden indexar
+            millor el contingut quan utilitzem etiquetes semàntiques, ja que
+            poden comprendre millor l'estructura i la importància del contingut.
+          </li>
+          <li>
+            <strong>Facilita el manteniment:</strong> El codi HTML semàntic és
+            més fàcil de llegir i entendre, tant per als desenvolupadors com per
+            als dissenyadors, facilitant el manteniment i les actualitzacions.
+          </li>
+          <li>
+            <strong>Millora la claredat del codi:</strong> Utilitzar etiquetes
+            semàntiques ajuda a organitzar el contingut en seccions clares i
+            significatives, fent que el codi sigui més estructurat i fàcil de
+            seguir.
+          </li>
+        </ul>
+      </section>
+
+      <section id="estructura-etiqueta">
+        <h2>Estructura d'una etiqueta</h2>
+        <p>
+          Les etiquetes HTML es componen d'una etiqueta d'obertura i una
+          etiqueta de tancament, amb el contingut entre elles:
+        </p>
+        <pre><code>&lt;etiqueta&gt;Contingut&lt;/etiqueta&gt;</code></pre>
+        <p>
+          Algunes etiquetes són auto-tancades, com &lt;img&gt; per imatges o
+          &lt;br&gt; per salts de línia:
+        </p>
+        <pre><code>&lt;img src="imatge.jpg" alt="Descripció"&gt;
+&lt;br&gt;</code></pre>
+      </section>
+
+      <section id="etiquetes-principals">
+        <h2>Etiquetes principals i el seu ús</h2>
+
+        <h3 id="etiquetes-text">Etiquetes de text</h3>
+        <p>
+          Les etiquetes de text s'utilitzen per a definir i formatar text.
+          Algunes de les més comunes són:
+        </p>
+        <ul>
+          <li>
+            &lt;h1&gt; a &lt;h6&gt;: Encapsula els títols de diferents nivells,
+            amb &lt;h1&gt; sent el més important i &lt;h6&gt; el menys
+            important.
+          </li>
+          <li>&lt;p&gt; per a paràgrafs.</li>
+          <li>
+            &lt;strong&gt; per a text en negrita i &lt;em&gt; per a text en
+            cursiva.
+          </li>
+          <li>&lt;br&gt; per a salts de línia.</li>
+        </ul>
+        <h4>Exemples:</h4>
+        <pre><code>&lt;h1&gt;Títol Principal&lt;/h1&gt;
+&lt;h2&gt;Subtítol&lt;/h2&gt;
+&lt;p&gt;Aquest és un paràgraf de text.&lt;/p&gt;
+&lt;strong&gt;Text en negrita&lt;/strong&gt;
+&lt;em&gt;Text en cursiva&lt;/em&gt;
+&lt;br&gt;Salt de línia&lt;br&gt;Més text</code></pre>
+
+        <h3 id="enllaços-imatges">Enllaços i imatges</h3>
+        <p>
+          Utilitzem l'etiqueta &lt;a&gt; per crear enllaços i l'etiqueta
+          &lt;img&gt; per inserir imatges. A continuació, veurem com combinar
+          ambdues per fer que una imatge actuï com un enllaç.
+        </p>
+
+        <h4>Crear un enllaç</h4>
+        <p>
+          Per crear un enllaç, utilitzem l'etiqueta &lt;a&gt; amb l'atribut
+          <code>href</code> que defineix l'URL a la qual es dirigeix l'enllaç:
+        </p>
+        <pre><code>&lt;a href="https://www.example.com"&gt;Visita Example&lt;/a&gt;</code></pre>
+
+        <h4>Inserir una imatge</h4>
+        <p>
+          Per inserir una imatge, utilitzem l'etiqueta &lt;img&gt; amb els
+          atributs
+          <code>src</code> (origen de la imatge) i <code>alt</code> (text
+          alternatiu):
+        </p>
+        <pre><code>&lt;img src="imatge.jpg" alt="Descripció de la imatge"&gt;</code></pre>
+
+        <h4>Combinar enllaços amb imatges</h4>
+        <p>
+          Per fer que una imatge actuï com un enllaç, col·loquem l'etiqueta
+          &lt;img&gt; dins de l'etiqueta &lt;a&gt;:
+        </p>
+        <pre><code>&lt;a href="https://www.example.com"&gt;
+  &lt;img src="imatge.jpg" alt="Descripció de la imatge"&gt;
+&lt;/a&gt;</code></pre>
+        <p>
+          En aquest exemple, quan un usuari faci clic a la imatge, serà
+          redirigit a l'URL especificat en l'atribut <code>href</code> de
+          l'etiqueta &lt;a&gt;.
+        </p>
+
+        <h3 id="formularis">Formularis</h3>
+        <p>
+          Els formularis es creen amb l'etiqueta &lt;form&gt; i poden contenir
+          diversos tipus d'entrades, com camps de text i botons:
+        </p>
+        <pre><code>&lt;form action="/submit" method="post"&gt;
+  &lt;label for="nom"&gt;Nom:&lt;/label&gt;
+  &lt;input type="text" id="nom" name="nom"&gt;&lt;br&gt;
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email"&gt;&lt;br&gt;
+  &lt;input type="submit" value="Enviar"&gt;
+&lt;/form&gt;</code></pre>
+
+        <h3 id="multimedia">Contingut multimèdia</h3>
+        <p>
+          HTML permet incrustar contingut multimèdia com vídeos i àudios amb les
+          etiquetes &lt;video&gt; i &lt;audio&gt;:
+        </p>
+        <pre><code>&lt;video width="320" height="240" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  El teu navegador no suporta la etiqueta de vídeo.
+&lt;/video&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+  El teu navegador no suporta la etiqueta d'àudio.
+&lt;/audio&gt;</code></pre>
+
+        <h3 id="semantica">Etiquetes semàntiques</h3>
+        <p>
+          Les etiquetes semàntiques descriuen millor el tipus de contingut que
+          contenen:
+        </p>
+        <ul>
+          <li>&lt;article&gt;: Defineix un article independent i complet.</li>
+          <li>
+            &lt;section&gt;: Defineix una secció de contingut temàticament
+            relacionat.
+          </li>
+          <li>&lt;aside&gt;: Defineix contingut secundari o complementari.</li>
+          <li>
+            &lt;details&gt;: Defineix un conjunt de dades que l'usuari pot
+            mostrar o amagar.
+          </li>
+        </ul>
+        <h4>Exemples:</h4>
+        <pre><code>&lt;article&gt;
+  &lt;h2&gt;Títol de l'Article&lt;/h2&gt;
+  &lt;p&gt;Contingut de l'article.&lt;/p&gt;
+&lt;/article&gt;
+
+&lt;section&gt;
+  &lt;h2&gt;Títol de la Secció&lt;/h2&gt;
+  &lt;p&gt;Contingut de la secció.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+      </section>
+
+      <section id="etiquetes-obsoletes">
+        <h2>Etiquetes i propietats HTML obsoletes</h2>
+        <p>
+          Algunes etiquetes i propietats HTML han quedat obsoletes amb el temps
+          a mesura que els estàndards web han evolucionat. Aquestes etiquetes i
+          propietats ja no s'utilitzen en pràctiques modernes i han estat
+          substituïdes per alternatives més eficients i estandarditzades.
+        </p>
+
+        <h3>Etiquetes HTML Obsoletes</h3>
+        <ul>
+          <li>
+            <code>&lt;font&gt;</code>: Utilitzada per definir el tipus, mida i
+            color de la font. Aquesta etiqueta ha estat reemplaçada per CSS.
+            Exemples:
+            <pre><code>&lt;font face="Arial" size="4" color="red"&gt;Text&lt;/font&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;center&gt;</code>: Utilitzada per centrar el contingut
+            dins del seu element pare. Ha estat reemplaçada per CSS. Exemples:
+            <pre><code>&lt;center&gt;Text centrat&lt;/center&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;marquee&gt;</code>: Utilitzada per crear text desplaçable.
+            Aquesta etiqueta ja no és recomanada i ha estat reemplaçada per CSS.
+            Exemples:
+            <pre><code>&lt;marquee&gt;Text en moviment&lt;/marquee&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;blink&gt;</code>: Utilitzada per fer que el text
+            parpelleig. Aquesta etiqueta és obsoleta i no és suportada pels
+            navegadors moderns. Exemples:
+            <pre><code>&lt;blink&gt;Text que parpelleja&lt;/blink&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;u&gt;</code>: Originalment utilitzada per subratllar text.
+            Encara es pot utilitzar en alguns casos, però la millor pràctica és
+            utilitzar CSS per a aquesta funcionalitat. Exemples:
+            <pre><code>&lt;u&gt;Text subratllat&lt;/u&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;dir&gt;</code>: Utilitzada per crear llistes de direcció
+            (directories). Ha estat reemplaçada per <code>&lt;ul&gt;</code> o
+            <code>&lt;ol&gt;</code>. Exemples:
+            <pre><code>&lt;dir&gt;
+        &lt;li&gt;Element 1&lt;/li&gt;
+        &lt;li&gt;Element 2&lt;/li&gt;
+    &lt;/dir&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;menu&gt;</code>: Utilitzada per crear llistes de menús. Ha
+            estat reemplaçada per <code>&lt;ul&gt;</code> o
+            <code>&lt;ol&gt;</code>. Exemples:
+            <pre><code>&lt;menu&gt;
+        &lt;li&gt;Element 1&lt;/li&gt;
+        &lt;li&gt;Element 2&lt;/li&gt;
+    &lt;/menu&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;applet&gt;</code>: Utilitzada per incrustar applets Java a
+            les pàgines web. Ha estat substituïda per altres tecnologies com
+            <code>&lt;object&gt;</code> i <code>&lt;embed&gt;</code>. Exemples:
+            <pre><code>&lt;applet code="MyApplet.class" width="300" height="300"&gt;&lt;/applet&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;basefont&gt;</code>: Utilitzada per definir el tipus, mida
+            i color de la font per a tota la pàgina. Ha estat substituïda per
+            CSS. Exemples:
+            <pre><code>&lt;basefont face="Verdana" size="3" color="blue"&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;bdo&gt;</code>: Utilitzada per canviar la direcció del
+            text. Encara es pot utilitzar, però en la majoria de casos, es
+            recomana utilitzar CSS per controlar la direcció del text. Exemples:
+            <pre><code>&lt;bdo dir="rtl"&gt;Text de dreta a esquerra&lt;/bdo&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;listing&gt;</code>: Utilitzada per mostrar codi font
+            preformatat. Ha estat reemplaçada per <code>&lt;pre&gt;</code>.
+            Exemples:
+            <pre><code>&lt;listing&gt;int main() { return 0; }&lt;/listing&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;noframes&gt;</code>: Utilitzada per proporcionar contingut
+            alternatiu a navegadors que no suportaven frames. Ha estat
+            substituïda per una millor estructura de contingut i disseny
+            adaptatiu. Exemples:
+            <pre><code>&lt;noframes&gt;
+        &lt;p&gt;El seu navegador no suporta frames.&lt;/p&gt;
+    &lt;/noframes&gt;</code></pre>
+          </li>
+          <li>
+            <code>&lt;plaintext&gt;</code>: Utilitzada per mostrar text pla
+            sense format. Ha estat reemplaçada per <code>&lt;pre&gt;</code>.
+            Exemples:
+            <pre><code>&lt;plaintext&gt;Text sense format&lt;/plaintext&gt;</code></pre>
+          </li>
+        </ul>
+
+        <h3>Propietats HTML Obsoletes</h3>
+        <ul>
+          <li>
+            <code>bgcolor</code>: Utilitzada per definir el color de fons d'un
+            element. Aquesta propietat ha estat reemplaçada per CSS. Exemples:
+            <pre><code>&lt;table bgcolor="#FFFF00"&gt;
+        &lt;tr&gt;&lt;td&gt;Text&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;</code></pre>
+          </li>
+          <li>
+            <code>align</code>: Utilitzada per alinear text i altres elements.
+            Aquesta propietat ha estat reemplaçada per CSS. Exemples:
+            <pre><code>&lt;p align="center"&gt;Text centrat&lt;/p&gt;</code></pre>
+          </li>
+          <li>
+            <code>border</code>: Utilitzada per definir l'amplada del bord d'una
+            taula. Ara s'ha substituït per CSS. Exemples:
+            <pre><code>&lt;table border="1"&gt;
+        &lt;tr&gt;&lt;td&gt;Cel·la&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;</code></pre>
+          </li>
+          <li>
+            <code>width</code>: Utilitzada per definir l'amplada d'un element
+            com <code>&lt;table&gt;</code> o <code>&lt;img&gt;</code>. Ara s'ha
+            substituït per CSS. Exemples:
+            <pre><code>&lt;img src="imatge.jpg" width="200"&gt;</code></pre>
+          </li>
+          <li>
+            <code>height</code>: Utilitzada per definir l'altura d'un element
+            com <code>&lt;img&gt;</code>. Ara s'ha substituït per CSS. Exemples:
+            <pre><code>&lt;img src="imatge.jpg" height="100"&gt;</code></pre>
+          </li>
+          <li>
+            <code>text</code>: Utilitzada per definir el color del text en
+            algunes etiquetes com <code>&lt;body&gt;</code>. Ha estat
+            substituïda per CSS. Exemples:
+            <pre><code>&lt;body text="black"&gt;Text&lt;/body&gt;</code></pre>
+          </li>
+          <li>
+            <code>link</code>: Utilitzada per definir el color dels enllaços no
+            visitats en l'etiqueta <code>&lt;body&gt;</code>. Ara s'ha
+            substituït per CSS. Exemples:
+            <pre><code>&lt;body link="blue"&gt;Text&lt;/body&gt;</code></pre>
+          </li>
+          <li>
+            <code>vlink</code>: Utilitzada per definir el color dels enllaços
+            visitats en l'etiqueta <code>&lt;body&gt;</code>. Ara s'ha
+            substituït per CSS. Exemples:
+            <pre><code>&lt;body vlink="purple"&gt;Text&lt;/body&gt;</code></pre>
+          </li>
+          <li>
+            <code>alink</code>: Utilitzada per definir el color dels enllaços
+            actius en l'etiqueta <code>&lt;body&gt;</code>. Ara s'ha substituït
+            per CSS. Exemples:
+            <pre><code>&lt;body alink="red"&gt;Text&lt;/body&gt;</code></pre>
+          </li>
+          <li>
+            <code>marginwidth</code>: Utilitzada per definir l'amplada del marge
+            horitzontal d'un frame en l'etiqueta <code>&lt;frame&gt;</code>. Ha
+            estat reemplaçada per CSS. Exemples:
+            <pre><code>&lt;frame src="pagina.html" marginwidth="10"&gt;</code></pre>
+          </li>
+          <li>
+            <code>marginheight</code>: Utilitzada per definir l'alçada del marge
+            vertical d'un frame en l'etiqueta <code>&lt;frame&gt;</code>. Ha
+            estat reemplaçada per CSS. Exemples:
+            <pre><code>&lt;frame src="pagina.html" marginheight="10"&gt;</code></pre>
+          </li>
+          <li>
+            <code>noembed</code>: Utilitzada per proporcionar contingut
+            alternatiu a navegadors que no suportaven l'etiqueta
+            <code>&lt;embed&gt;</code>. Ha estat reemplaçada per una millor
+            estructura de contingut. Exemples:
+            <pre><code>&lt;noembed&gt;
+      &lt;p&gt;El seu navegador no suporta <code>&lt;embed&gt;</code>.&lt;/p&gt;
+  &lt;/noembed&gt;</code></pre>
+          </li>
+        </ul>
+      </section>
+
+      <section id="llistes">
+        <h2>Llistes</h2>
+        <p>
+          Les llistes es poden classificar en dos tipus principals: llistes
+          ordenades i llistes no ordenades.
+        </p>
+
+        <h3>Llistes no ordenades</h3>
+        <p>
+          Les llistes no ordenades utilitzen el format de boles per als elements
+          de la llista. S'especifica amb l'etiqueta &lt;ul&gt; i cada element es
+          defineix amb &lt;li&gt;:
+        </p>
+        <pre><code>&lt;ul&gt;
+      &lt;li&gt;Primer element&lt;/li&gt;
+      &lt;li&gt;Segon element&lt;/li&gt;
+      &lt;li&gt;Tercer element&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+        <p>
+          Per defecte, els elements apareixen amb boles, però podem canviar el
+          tipus de marcador amb CSS utilitzant la propietat
+          <code>list-style-type</code>.
+        </p>
+        <pre><code>&lt;ul style="list-style-type: square;"&gt;
+      &lt;li&gt;Primer element&lt;/li&gt;
+      &lt;li&gt;Segon element&lt;/li&gt;
+      &lt;li&gt;Tercer element&lt;/li&gt;
+    &lt;/ul&gt;</code></pre>
+
+        <h3>Llistes ordenades</h3>
+        <p>
+          Les llistes ordenades utilitzen números per als elements. Es
+          defineixen amb l'etiqueta &lt;ol&gt; i cada element amb &lt;li&gt;:
+        </p>
+        <pre><code>&lt;ol&gt;
+      &lt;li&gt;Primer element&lt;/li&gt;
+      &lt;li&gt;Segon element&lt;/li&gt;
+      &lt;li&gt;Tercer element&lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+        <p>
+          Podem canviar el tipus de numeració utilitzant l'atribut
+          <code>type</code>:
+        </p>
+        <ul>
+          <li><code>type="1"</code>: Números (per defecte)</li>
+          <li><code>type="A"</code>: Lletres majúscules</li>
+          <li><code>type="a"</code>: Lletres minúscules</li>
+          <li><code>type="I"</code>: Numeració romana majúscula</li>
+          <li><code>type="i"</code>: Numeració romana minúscula</li>
+        </ul>
+        <pre><code>&lt;ol type="A"&gt;
+      &lt;li&gt;Primer element&lt;/li&gt;
+      &lt;li&gt;Segon element&lt;/li&gt;
+      &lt;li&gt;Tercer element&lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+
+        <p>
+          També podem especificar el número inicial amb l'atribut
+          <code>start</code>:
+        </p>
+        <pre><code>&lt;ol start="5"&gt;
+      &lt;li&gt;Cinquè element&lt;/li&gt;
+      &lt;li&gt;Sisè element&lt;/li&gt;
+      &lt;li&gt;Setè element&lt;/li&gt;
+    &lt;/ol&gt;</code></pre>
+        <p>En aquest exemple, la numeració començarà des del número 5.</p>
+      </section>
+
+      <section id="taules">
+        <h2>Taules</h2>
+        <p>
+          Les taules en HTML es fan servir per presentar dades en format de
+          matriu, amb files i columnes. La seva estructura bàsica utilitza les
+          etiquetes &lt;table&gt;, &lt;tr&gt;, &lt;td&gt; i &lt;th&gt;:
+        </p>
+
+        <h3>Estructura bàsica d'una taula</h3>
+        <pre><code>&lt;table border="1"&gt;
+      &lt;tr&gt;
+        &lt;th&gt;Capçalera 1&lt;/th&gt;
+        &lt;th&gt;Capçalera 2&lt;/th&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Dada 1&lt;/td&gt;
+        &lt;td&gt;Dada 2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;Dada 3&lt;/td&gt;
+        &lt;td&gt;Dada 4&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/table&gt;</code></pre>
+        <p>
+          Aquesta estructura crea una taula amb dues columnes i tres files,
+          incloent les capçaleres.
+        </p>
+
+        <h3>Etiquetes addicionals per a taules</h3>
+        <p>
+          Les etiquetes &lt;thead&gt;, &lt;tbody&gt; i &lt;tfoot&gt; ajuden a
+          organitzar millor les taules:
+        </p>
+
+        <h4>&lt;thead&gt;</h4>
+        <p>
+          L'etiqueta &lt;thead&gt; s'utilitza per agrupar les capçaleres de les
+          columnes. Específicament, s'utilitza per a la fila de les capçaleres
+          (amb &lt;th&gt;):
+        </p>
+        <pre><code>&lt;table border="1"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Capçalera 1&lt;/th&gt;
+          &lt;th&gt;Capçalera 2&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Dada 1&lt;/td&gt;
+          &lt;td&gt;Dada 2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Dada 3&lt;/td&gt;
+          &lt;td&gt;Dada 4&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;</code></pre>
+
+        <h4>&lt;tbody&gt;</h4>
+        <p>
+          L'etiqueta &lt;tbody&gt; s'utilitza per agrupar el cos principal de
+          les dades de la taula, separant les dades dels encapçalaments i del
+          peu de pàgina:
+        </p>
+        <pre><code>&lt;table border="1"&gt;
+      &lt;thead&gt;...&lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Dada 1&lt;/td&gt;
+          &lt;td&gt;Dada 2&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Dada 3&lt;/td&gt;
+          &lt;td&gt;Dada 4&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;</code></pre>
+
+        <h4>&lt;tfoot&gt;</h4>
+        <p>
+          L'etiqueta &lt;tfoot&gt; s'utilitza per agrupar les files de peu de
+          taula, com les sumes o notes finals:
+        </p>
+        <pre><code>&lt;table border="1"&gt;
+      &lt;thead&gt;...&lt;/thead&gt;
+      &lt;tbody&gt;...&lt;/tbody&gt;
+      &lt;tfoot&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Total&lt;/td&gt;
+          &lt;td&gt;100&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tfoot&gt;
+    &lt;/table&gt;</code></pre>
+
+        <h3>Attributes útils per a taules</h3>
+        <p>A continuació, alguns atributs útils per a taules:</p>
+        <ul>
+          <li>
+            <strong>border</strong>: Defineix el gruix del marc de la taula. Per
+            exemple, <code>border="1"</code> crea una línia de contorn de 1
+            píxel al voltant de la taula i les cel·les.
+          </li>
+          <li>
+            <strong>cellpadding</strong>: Defineix l'espai entre el contingut de
+            la cel·la i el seu contorn. Exemple: <code>cellpadding="5"</code>.
+          </li>
+          <li>
+            <strong>cellspacing</strong>: Defineix l'espai entre les cel·les de
+            la taula. Exemple: <code>cellspacing="2"</code>.
+          </li>
+        </ul>
+
+        <h3>Exemple de taula completa</h3>
+        <p>
+          Aquí tens un exemple de taula completa amb capçalera, cos i peu de
+          pàgina:
+        </p>
+        <pre><code>&lt;table border="1" cellpadding="5" cellspacing="2"&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th&gt;Nom&lt;/th&gt;
+          &lt;th&gt;Edat&lt;/th&gt;
+          &lt;th&gt;Ciutat&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Anna&lt;/td&gt;
+          &lt;td&gt;25&lt;/td&gt;
+          &lt;td&gt;Barcelona&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Marc&lt;/td&gt;
+          &lt;td&gt;30&lt;/td&gt;
+          &lt;td&gt;València&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+      &lt;tfoot&gt;
+        &lt;tr&gt;
+          &lt;td colspan="3"&gt;Total de persones&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tfoot&gt;
+    &lt;/table&gt;</code></pre>
+      </section>
+
+      <section id="divs">
+        <h2>Els <code>&lt;div&gt;</code> i la seva utilitat</h2>
+        <p>
+          L'etiqueta &lt;div&gt; s'utilitza per agrupar elements i aplicar
+          estils amb CSS. No té significat semàntic per si mateixa, però és útil
+          per estructurar el contingut.
+        </p>
+        <pre><code>&lt;div class="container"&gt;
+  &lt;h2&gt;Títol&lt;/h2&gt;
+  &lt;p&gt;Contingut dins del div.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+      </section>
+
+      <section id="comentaris">
+        <h2>Comentaris en HTML</h2>
+        <p>Els comentaris es creen amb &lt;!-- i es tanquen amb --&gt;:</p>
+        <pre><code>&lt;!-- Aquest és un comentari --&gt;</code></pre>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Introducció a l'HTML. Tots els drets reservats.</p>
+    </footer>
+  </body>
+</html>
