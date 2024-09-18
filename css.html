@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS: Estilització i disseny</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1><a href="index.html">Aplicacions web</a></h1>
+        <h2>CSS: Estilització i disseny</h2>
+        <p>
+          Començarem a donar estils al contingut HTML i a poder aplicar dissenys
+          més complexos i adaptatius.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <section>
+        <h2>Què és el CSS?</h2>
+        <p>
+          El CSS (Cascading Style Sheets, o Fulls d'Estil en Cascada) és el
+          llenguatge utilitzat per estilitzar pàgines web. Això significa que,
+          mentre que el HTML ens permet estructurar el contingut (afegint
+          textos, imatges, enllaços, etc.), el CSS ens ajuda a definir com es
+          veurà aquest contingut: colors, mides, disposició en pantalla, etc.
+        </p>
+        <p>
+          Un punt important del CSS és la "cascada", que fa referència a com
+          s'apliquen les regles d'estil en funció de la seva especificitat i
+          l'ordre en què estan declarades. Això vol dir que si hi ha conflicte
+          entre dues regles que afecten el mateix element, la que sigui més
+          específica o la que aparegui més tard tindrà prioritat.
+        </p>
+      </section>
+
+      <section>
+        <h2>Sintaxi del CSS</h2>
+        <p>
+          Abans d'endinsar-nos en com aplicar estils amb CSS, és important
+          entendre la seva sintaxi bàsica. Una regla CSS està composta per tres
+          parts principals: un selector, una propietat i un valor.
+        </p>
+        <pre><code>selector {
+        propietat: valor;
+    }</code></pre>
+        <p>A continuació, expliquem cadascun d'aquests elements:</p>
+        <ul>
+          <li>
+            <strong>Selector:</strong> Determina a quins elements HTML
+            s'aplicaran els estils. Pot ser un nom d'etiqueta, una classe, un
+            id, o altres tipus de selectors.
+          </li>
+          <li>
+            <strong>Propietat:</strong> És l'aspecte de l'element que vols
+            modificar. Per exemple, pot ser el color del text
+            (<code>color</code>), la mida de la lletra (<code>font-size</code>),
+            o el marge (<code>margin</code>).
+          </li>
+          <li>
+            <strong>Valor:</strong> És el que defineix com es veurà l'element
+            segons la propietat especificada. Per exemple, si la propietat és
+            <code>color</code>, el valor pot ser <code>red</code> (vermell).
+          </li>
+        </ul>
+
+        <h3>Exemple de regla CSS:</h3>
+        <pre><code>p {
+        color: blue;
+        font-size: 16px;
+    }</code></pre>
+        <p>
+          En aquest exemple, el selector és <code>p</code> (tots els paràgrafs),
+          la propietat <code>color</code> defineix el color del text, i el valor
+          <code>blue</code> és el color blau. A més, s'especifica la mida de la
+          font amb la propietat <code>font-size</code> i el valor
+          <code>16px</code>.
+        </p>
+      </section>
+
+      <section>
+        <h2>Com afegir CSS a una pàgina web</h2>
+        <p>Hi ha diverses formes d'integrar CSS a un document HTML:</p>
+        <ul>
+          <li>
+            <strong>CSS Inline:</strong> S'escriu directament a l'etiqueta HTML
+            amb l'atribut <code>style</code>. Es fa servir per aplicar estils
+            específics a un sol element.
+          </li>
+          <li>
+            <strong>CSS Intern:</strong> S'inclou dins d'un bloc
+            <code>&lt;style&gt;</code> dins del fitxer HTML. Ideal per aplicar
+            estils en una sola pàgina.
+          </li>
+          <li>
+            <strong>CSS Extern:</strong> El CSS es col·loca en un fitxer separat
+            (.css) i es vincula amb l'etiqueta <code>&lt;link&gt;</code>. Aquest
+            és el mètode més recomanat per organitzar estils en projectes grans.
+          </li>
+        </ul>
+
+        <h3>Exemple de CSS Inline:</h3>
+        <pre><code>&lt;p style="color: red;"&gt;Aquest és un text vermell&lt;/p&gt;</code></pre>
+
+        <h3>Exemple de CSS Intern:</h3>
+        <pre><code>&lt;style&gt;
+        p {
+            color: blue;
+        }
+    &lt;/style&gt;
+    
+    &lt;p&gt;Aquest és un text blau&lt;/p&gt;</code></pre>
+
+        <h3>Exemple de CSS Extern:</h3>
+        <pre><code>&lt;link rel="stylesheet" href="estils.css"&gt;</code></pre>
+        <p>I dins de l’arxiu <code>estils.css</code>:</p>
+        <pre><code>p {
+        color: green;
+    }</code></pre>
+      </section>
+
+      <section>
+        <h2>Selectors en CSS</h2>
+        <p>
+          Els selectors són la manera de dir al CSS a quins elements HTML volem
+          aplicar els estils. Alguns dels selectors més comuns són:
+        </p>
+        <ul>
+          <li>
+            <strong>Selector d'etiqueta:</strong> Aplica estils a tots els
+            elements d'un tipus concret.<br />Exemple:
+            <code>p { color: red; }</code> aplica el color vermell a tots els
+            paràgrafs.
+          </li>
+          <li>
+            <strong>Selector de classe:</strong> Aplica estils a elements que
+            tenen una classe específica. Es defineix amb un punt (.) abans del
+            nom de la classe.<br />Exemple:
+            <code>.nom-classe { color: blue; }</code>.
+          </li>
+          <li>
+            <strong>Selector d'id:</strong> Aplica estils a un element que té un
+            id específic. Es defineix amb un coixinet (#) abans del nom de
+            l'id.<br />Exemple: <code>#nom-id { color: green; }</code>.
+          </li>
+          <li>
+            <strong>Selector d'atribut:</strong> Aplica estils a elements que
+            contenen un atribut específic.<br />Exemple:
+            <code>a[target="_blank"] { color: purple; }</code> aplicarà estils
+            als enllaços que s'obren en una nova pestanya.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Prioritat en l'aplicació de regles CSS</h2>
+        <p>
+          Quan hi ha múltiples regles CSS que s'apliquen al mateix element, cal
+          entendre quina regla té prioritat. Aquesta prioritat es determina per
+          diversos factors:
+        </p>
+
+        <h3>1. Especificitat</h3>
+        <p>
+          L'especificitat és un sistema de puntuació que determina quina regla
+          s'aplica quan hi ha múltiples regles que afecten el mateix element. A
+          major especificitat, més prioritat té una regla. A continuació,
+          expliquem l'ordre de major a menor especificitat:
+        </p>
+        <ul>
+          <li>
+            <strong>ID (#):</strong> Els selectors d'ID tenen la màxima
+            prioritat.<br />Ex: <code>#header { color: red; }</code>.
+          </li>
+          <li>
+            <strong>Classe (.) o atributs:</strong> Les classes i els atributs
+            tenen una especificitat intermèdia.<br />Ex:
+            <code>.classe { color: blue; }</code>.
+          </li>
+          <li>
+            <strong>Etiqueta (nom d'etiqueta HTML):</strong> Els selectors
+            d'etiqueta tenen la menor especificitat.<br />Ex:
+            <code>p { color: green; }</code>.
+          </li>
+        </ul>
+
+        <h3>2. Ordre de declaració</h3>
+        <p>
+          Quan dues regles tenen la mateixa especificitat, es prioritza l'última
+          regla que apareix en el codi. Això vol dir que les regles declarades
+          després sobreescriuran les anteriors si tenen la mateixa
+          especificitat.
+        </p>
+        <pre><code>/* Primera regla */
+    p {
+        color: red;
+    }
+    
+    /* Segona regla (té prioritat) */
+    p {
+        color: blue;
+    }</code></pre>
+        <p>
+          En aquest exemple, tots els paràgrafs seran de color blau perquè la
+          segona regla apareix després de la primera.
+        </p>
+
+        <h3>3. Important (!important)</h3>
+        <p>
+          Quan volem donar prioritat a una regla, podem utilitzar la declaració
+          <code>!important</code>. Aquesta regla tindrà prioritat per sobre de
+          qualsevol altra, independentment de l'especificitat o l'ordre de
+          declaració.
+        </p>
+        <pre><code>p {
+        color: red !important;
+    }</code></pre>
+        <p>
+          En aquest cas, el color dels paràgrafs serà vermell, encara que altres
+          regles posteriors intentin canviar-lo.
+        </p>
+
+        <h3>4. Estils Inline</h3>
+        <p>
+          Els estils inline, declarats directament a l'etiqueta HTML amb
+          l'atribut <code>style</code>, tenen més prioritat que qualsevol regle
+          externa o interna, sempre que no hi hagi un <code>!important</code>.
+        </p>
+        <pre><code>&lt;p style="color: green;"&gt;Aquest text és verd&lt;/p&gt;</code></pre>
+        <p>
+          Això canviarà el color del paràgraf a verd independentment d'altres
+          regles CSS que puguin afectar els paràgrafs.
+        </p>
+
+        <h3>Resum de la Prioritat:</h3>
+        <ol>
+          <li>Estils amb <code>!important</code>.</li>
+          <li>Estils inline (dins de l'etiqueta HTML).</li>
+          <li>Selectors d'ID.</li>
+          <li>Selectors de classe o atribut.</li>
+          <li>Selectors d'etiqueta.</li>
+          <li>Ordre de declaració (les últimes regles tenen més prioritat).</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Propietats CSS fonamentals</h2>
+        <p>
+          Amb el CSS, podem aplicar una gran varietat de propietats per
+          modificar l'aparença dels elements. A continuació, es mostren algunes
+          de les propietats més utilitzades:
+        </p>
+
+        <h3>Color</h3>
+        <p>Defineix el color del text d'un element:</p>
+        <pre><code>p {
+        color: red;
+    }</code></pre>
+
+        <h3>Background-color</h3>
+        <p>Defineix el color de fons d'un element:</p>
+        <pre><code>div {
+        background-color: lightblue;
+    }</code></pre>
+
+        <h3>Font-size</h3>
+        <p>Defineix la mida de la font:</p>
+        <pre><code>h1 {
+        font-size: 32px;
+    }</code></pre>
+
+        <h3>Font-family</h3>
+        <p>Defineix la tipografia que es farà servir:</p>
+        <pre><code>p {
+        font-family: 'Arial', sans-serif;
+    }</code></pre>
+
+        <h3>Margin</h3>
+        <p>Defineix l'espai extern fora de l'element:</p>
+        <pre><code>div {
+        margin: 20px;
+    }</code></pre>
+
+        <h3>Padding</h3>
+        <p>Defineix l'espai intern dins de l'element:</p>
+        <pre><code>div {
+        padding: 10px;
+    }</code></pre>
+
+        <h3>Border</h3>
+        <p>Defineix el contorn d'un element:</p>
+        <pre><code>div {
+        border: 1px solid black;
+    }</code></pre>
+      </section>
+
+      <section>
+        <h2>El Model de Caixa (Box Model)</h2>
+        <p>
+          El model de caixa és fonamental per entendre com els elements HTML
+          ocupen espai a la pàgina. Cada element es considera una "caixa" amb
+          quatre parts:
+        </p>
+        <ul>
+          <li>
+            <strong>Contingut:</strong> El text o altres elements dins de
+            l'element.
+          </li>
+          <li>
+            <strong>Padding:</strong> L'espai entre el contingut i la vora de
+            l'element.
+          </li>
+          <li><strong>Border:</strong> La línia que envolta l'element.</li>
+          <li><strong>Margin:</strong> L'espai extern fora de l'element.</li>
+        </ul>
+        <p>
+          Aquestes quatre parts treballen conjuntament per determinar la mida
+          final d'un element a la pàgina.
+        </p>
+        <img src="model_caixa.png" width="400px">
+      </section>
+
+      <section>
+        <h2>Media Queries i Responsivitat</h2>
+        <p>
+          Un dels objectius principals del disseny modern de pàgines web és fer
+          que les pàgines siguin "responsives", és a dir, que es vegin bé tant
+          en dispositius mòbils com en pantalles grans. Per això, utilitzem les
+          <em>media queries</em>, que ens permeten aplicar estils específics
+          segons la mida de la pantalla.
+        </p>
+
+        <h3>Exemple de Media Query:</h3>
+        <pre><code>@media (max-width: 600px) {
+        body {
+            background-color: lightblue;
+        }
+    }</code></pre>
+        <p>
+          En aquest exemple, quan la mida de la pantalla és inferior a 600
+          píxels, es canviarà el color de fons a blau clar.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 Portal de M08 - Aplicacions web</p>
+    </footer>
+  </body>
+</html>
