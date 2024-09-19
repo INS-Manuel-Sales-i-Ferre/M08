@@ -21,7 +21,21 @@
     </header>
 
     <main class="container">
-      <section>
+      <nav></nav>
+        <h2><a href="">Índex</a></h2>
+        <ul>
+          <li><a href="#que-es">Què és el CSS?</a></li>
+          <li><a href="#sintaxi">Sintaxi del CSS</a></li>
+          <li><a href="#com-afegir">Com afegir CSS a una pàgina web</a></li>
+          <li><a href="#selectors">Selectors en CSS</a></li>
+          <li><a href="#prioritat">Prioritat en l'aplicació de regles CSS</a></li>
+          <li><a href="#propietats">Propietats CSS fonamentals</a></li>
+          <li><a href="#model-caixa">El Model de Caixa (Box Model)</a></li>
+          <li><a href="#media-queries">Media Queries i responsivitat</a></li>
+        </ul>
+      </nav>
+
+      <section id="que-es">
         <h2>Què és el CSS?</h2>
         <p>
           El CSS (Cascading Style Sheets, o Fulls d'Estil en Cascada) és el
@@ -39,7 +53,7 @@
         </p>
       </section>
 
-      <section>
+      <section id="sintaxi">
         <h2>Sintaxi del CSS</h2>
         <p>
           Abans d'endinsar-nos en com aplicar estils amb CSS, és important
@@ -83,7 +97,7 @@
         </p>
       </section>
 
-      <section>
+      <section id="com-afegir">
         <h2>Com afegir CSS a una pàgina web</h2>
         <p>Hi ha diverses formes d'integrar CSS a un document HTML:</p>
         <ul>
@@ -124,7 +138,7 @@
     }</code></pre>
       </section>
 
-      <section>
+      <section id="selectors">
         <h2>Selectors en CSS</h2>
         <p>
           Els selectors són la manera de dir al CSS a quins elements HTML volem
@@ -155,9 +169,17 @@
             als enllaços que s'obren en una nova pestanya.
           </li>
         </ul>
+        <p>
+          Els selectors es poden combinar, per tal d'afegir especificitat. Per
+          exemple:
+          <code>#primeraseccio .textos p { color: purple; }</code> farà què
+          totes aquelles etiquetes <em>p</em>, dins d'una etiqueta amb la class <em>textos</em>,
+          dins d'una etiqueta amb l'id <em>primeraseccio</em>; tinguin el text de color
+          lila.
+        </p>
       </section>
 
-      <section>
+      <section id="prioritat">
         <h2>Prioritat en l'aplicació de regles CSS</h2>
         <p>
           Quan hi ha múltiples regles CSS que s'apliquen al mateix element, cal
@@ -175,17 +197,27 @@
         <ul>
           <li>
             <strong>ID (#):</strong> Els selectors d'ID tenen la màxima
-            prioritat.<br />Ex: <code>#header { color: red; }</code>.
+            prioritat.<br />Exemple: <code>#header { color: red; }</code> apunta
+            l'etiqueta de l'HTML amb la propietat id i l'id del selector:
+            <code>&lt;p id="header"&gt;Text roig&lt;/p&gt;</code>.
           </li>
           <li>
             <strong>Classe (.) o atributs:</strong> Les classes i els atributs
             tenen una especificitat intermèdia.<br />Ex:
-            <code>.classe { color: blue; }</code>.
+            <code>.classe { color: blue; }</code> apunta a totes les etiquetes
+            de l'HTML amb la propietat class que continguin, almenys, la classe
+            del selector:
+            <code
+              >&lt;p class="classe sensemarge ulldecona"&gt;Text
+              roig&lt;/p&gt;</code
+            >.
           </li>
           <li>
             <strong>Etiqueta (nom d'etiqueta HTML):</strong> Els selectors
             d'etiqueta tenen la menor especificitat.<br />Ex:
-            <code>p { color: green; }</code>.
+            <code>p { color: green; }</code> apunta a totes les etiquetes del
+            tipus del selector (independentment de les seves class o id), en
+            aquest cas a totes les <code>&lt;p&gt;Text roig&lt;/p&gt;</code>.
           </li>
         </ul>
 
@@ -248,7 +280,7 @@
         </ol>
       </section>
 
-      <section>
+      <section id="propietats">
         <h2>Propietats CSS fonamentals</h2>
         <p>
           Amb el CSS, podem aplicar una gran varietat de propietats per
@@ -299,7 +331,7 @@
     }</code></pre>
       </section>
 
-      <section>
+      <section id="model-caixa">
         <h2>El Model de Caixa (Box Model)</h2>
         <p>
           El model de caixa és fonamental per entendre com els elements HTML
@@ -322,11 +354,11 @@
           Aquestes quatre parts treballen conjuntament per determinar la mida
           final d'un element a la pàgina.
         </p>
-        <img src="model_caixa.png" width="400px">
+        <img src="model_caixa.png" width="400px" />
       </section>
 
-      <section>
-        <h2>Media Queries i Responsivitat</h2>
+      <section id="media-queries">
+        <h2>Media Queries i responsivitat</h2>
         <p>
           Un dels objectius principals del disseny modern de pàgines web és fer
           que les pàgines siguin "responsives", és a dir, que es vegin bé tant
